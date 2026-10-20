@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ネットワーク＆セキュリティ 単元別 暗記＆クイズマスター</title>
+  <title>通信ネットワークに関する知識 暗記＆クイズマスター</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -74,17 +74,17 @@
         <div class="bg-yellow-400 text-indigo-900 rounded-lg p-1.5 flex items-center justify-center font-bold">
           <i class="fa-solid fa-network-wired text-lg"></i>
         </div>
-        <h1 class="text-base md:text-xl font-black tracking-wide">ネットワーク＆セキュリティ</h1>
+        <h1 class="text-base md:text-xl font-black tracking-wide">通信ネットワークに関する知識</h1>
       </div>
       
       <!-- Right Header Controls: Smooth Animated Category Dropdown & Badges -->
       <div class="flex items-center gap-2 flex-wrap">
         
-        <!-- Custom Smooth Category Dropdown Menu -->
+        <!-- Custom Category Dropdown Menu -->
         <div class="relative" id="dropdown-container">
           <button id="dropdown-toggle-btn" onclick="toggleDropdown(event)" 
             class="bg-indigo-800/80 hover:bg-indigo-800 text-white text-xs md:text-sm font-bold py-2 px-4 rounded-full border border-indigo-400/40 shadow-sm flex items-center gap-2 transition active:scale-95 focus:outline-none">
-            <span id="selected-category-label"><i class="fa-solid fa-layer-group text-yellow-300"></i> 全単元 (48問)</span>
+            <span id="selected-category-label"><i class="fa-solid fa-layer-group text-yellow-300"></i> 全単元 (28問)</span>
             <i id="dropdown-arrow" class="fa-solid fa-chevron-down text-xs text-indigo-200 transition-transform duration-200"></i>
           </button>
 
@@ -93,28 +93,22 @@
             class="dropdown-menu absolute right-0 mt-2 w-64 bg-white text-slate-800 rounded-2xl shadow-xl border border-slate-200/80 p-2 z-50">
             <div class="text-[10px] font-bold text-slate-400 px-3 py-1 tracking-wider uppercase">学習単元の選択</div>
             
-            <button onclick="selectCategory('ALL', '全単元 (48問)')" 
+            <button onclick="selectCategory('ALL', '全単元 (28問)')" 
               class="cat-option w-full text-left px-3 py-2.5 rounded-xl text-xs md:text-sm font-bold transition hover:bg-indigo-50 hover:text-indigo-600 flex justify-between items-center bg-indigo-50 text-indigo-600">
               <span>全単元</span>
-              <span class="text-xs px-2 py-0.5 bg-indigo-100 rounded-full">48問</span>
+              <span class="text-xs px-2 py-0.5 bg-indigo-100 rounded-full">28問</span>
             </button>
             
-            <button onclick="selectCategory('ネットワークの構成', '① ネットワークの構成 (29問)')" 
+            <button onclick="selectCategory('ネットワークの構成', '① ネットワークの構成 (24問)')" 
               class="cat-option w-full text-left px-3 py-2.5 rounded-xl text-xs md:text-sm font-bold transition hover:bg-indigo-50 hover:text-indigo-600 flex justify-between items-center text-slate-700">
               <span>① ネットワークの構成</span>
-              <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">29問</span>
+              <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">24問</span>
             </button>
             
             <button onclick="selectCategory('ネットワークの活用', '② ネットワークの活用 (4問)')" 
               class="cat-option w-full text-left px-3 py-2.5 rounded-xl text-xs md:text-sm font-bold transition hover:bg-indigo-50 hover:text-indigo-600 flex justify-between items-center text-slate-700">
               <span>② ネットワークの活用</span>
               <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">4問</span>
-            </button>
-            
-            <button onclick="selectCategory('セキュリティ', '③ セキュリティ (15問)')" 
-              class="cat-option w-full text-left px-3 py-2.5 rounded-xl text-xs md:text-sm font-bold transition hover:bg-indigo-50 hover:text-indigo-600 flex justify-between items-center text-slate-700">
-              <span>③ セキュリティ</span>
-              <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">15問</span>
             </button>
           </div>
         </div>
@@ -155,7 +149,7 @@
     <section id="mode-flashcard" class="block">
       <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 mb-6">
         <div class="flex justify-between items-center mb-2 text-xs md:text-sm text-slate-600 font-medium">
-          <span id="card-progress-text" class="font-bold text-slate-700">問題 1 / 48</span>
+          <span id="card-progress-text" class="font-bold text-slate-700">問題 1 / 28</span>
           <div class="flex gap-2">
             <button onclick="toggleFilterReviewOnly()" id="btn-filter-review" class="px-3 py-1.5 text-xs rounded-xl border border-slate-300 text-slate-600 hover:bg-slate-100 transition flex items-center gap-1">
               <i class="fa-solid fa-filter text-amber-500"></i> <span>要復習のみ</span>
@@ -221,7 +215,7 @@
       <div id="typing-active-box">
         <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 mb-6">
           <div class="flex justify-between items-center mb-2 text-xs md:text-sm text-slate-600 font-medium">
-            <span id="typing-progress-text" class="font-bold text-slate-700">文字入力 1 / 48</span>
+            <span id="typing-progress-text" class="font-bold text-slate-700">文字入力 1 / 28</span>
             <span id="typing-score-text" class="text-indigo-600 font-bold">正解数: 0</span>
           </div>
           <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
@@ -261,7 +255,7 @@
           <i class="fa-solid fa-award"></i>
         </div>
         <h2 class="text-2xl font-bold text-slate-800 mb-2">入力テスト完了！</h2>
-        <div class="text-4xl md:text-5xl font-black text-indigo-600 mb-6" id="typing-final-score">0 / 48 正解</div>
+        <div class="text-4xl md:text-5xl font-black text-indigo-600 mb-6" id="typing-final-score">0 / 28 正解</div>
         
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <button id="btn-typing-retry-mistakes" onclick="startTypingTest(true)" class="py-3.5 px-6 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-2xl transition shadow-md flex items-center justify-center gap-2 hidden">
@@ -279,7 +273,7 @@
       <div id="quiz-active-box">
         <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 mb-6">
           <div class="flex justify-between items-center mb-2 text-xs md:text-sm text-slate-600 font-medium">
-            <span id="quiz-progress-text" class="font-bold text-slate-700">クイズ 1 / 48</span>
+            <span id="quiz-progress-text" class="font-bold text-slate-700">クイズ 1 / 28</span>
             <span id="quiz-score-text" class="text-indigo-600 font-bold">正解数: 0</span>
           </div>
           <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
@@ -308,7 +302,7 @@
           <i class="fa-solid fa-trophy"></i>
         </div>
         <h2 class="text-2xl font-bold text-slate-800 mb-2">8択テスト完了！</h2>
-        <div class="text-4xl md:text-5xl font-black text-indigo-600 mb-6" id="quiz-final-score">0 / 48 正解</div>
+        <div class="text-4xl md:text-5xl font-black text-indigo-600 mb-6" id="quiz-final-score">0 / 28 正解</div>
         
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <button id="btn-quiz-retry-mistakes" onclick="startQuiz(true)" class="py-3.5 px-6 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-2xl transition shadow-md flex items-center justify-center gap-2 hidden">
@@ -340,8 +334,9 @@
   </main>
 
   <script>
+    // 画像内の全28項目に完全準拠した問題データ
     const rawQuestions = [
-      // 1. 通信ネットワークに関する知識【ネットワークの構成】 (29問)
+      // 1. 通信ネットワークに関する知識【ネットワークの構成】 (24問)
       { id: 1, category: "ネットワークの構成", q: "国際標準化機構（ISO）で制定された，ネットワークで使用する機器や，データを送受信する手順など7つの階層に定義したもの。", a: "OSI参照モデル", alt: ["osi参照モデル", "OSIモデル"] },
       { id: 2, category: "ネットワークの構成", q: "LANケーブルの中継や分岐に用いられる集線装置。", a: "ハブ", alt: ["HUB", "hub"] },
       { id: 3, category: "ネットワークの構成", q: "ネットワーク間の接続を行う中継機器の一つで，IPアドレスをもとにデータの行き先を認識して転送し，パケットの経路選択機能などを持つ装置。", a: "ルータ", alt: ["ルーター", "router"] },
@@ -355,10 +350,10 @@
       { id: 11, category: "ネットワークの構成", q: "メールサーバの電子メールを管理する通信規約。", a: "IMAP", alt: ["imap", "IMAP4"] },
       { id: 12, category: "ネットワークの構成", q: "電子メールをユーザのコンピュータからメールサーバへ送信するときや，メールサーバ間でメールを転送するときに用いる通信規約。", a: "SMTP", alt: ["smtp"] },
       { id: 13, category: "ネットワークの構成", q: "コンピュータをネットワークに接続する際に，IPアドレスなどを自動的に割り当てる規約。", a: "DHCP", alt: ["dhcp"] },
-      { id: 14, category: "ネットワークの構成", q: "ルータなどのネットワーク機器に割り当てられているハードウェア固有の番号。", a: "MACアドレス", alt: ["マックアドレス", "macアドレス"] },
-      { id: 15, category: "ネットワークの構成", q: "TCP/IPプロトコルを用いたネットワーク上で，コンピュータを識別するための番号。", a: "IPアドレス", alt: ["ipアドレス"] },
-      { id: 16, category: "ネットワークの構成", q: "会社や家庭のLAN内部でコンピュータ機器を識別するために，ネットワークアドレス部とホストアドレス部で構成された番号。", a: "プライベートIPアドレス", alt: ["プライベートipアドレス"] },
-      { id: 17, category: "ネットワークの構成", q: "インターネットに接続されたコンピュータを識別するため，一意となるように割り当てられた番号。", a: "グローバルIPアドレス", alt: ["グローバルipアドレス"] },
+      { id: 14, category: "ネットワークの構成", q: "ルータなどのネットワーク機器に割り当てられているハードウェア固有の番号。", a: "MACアドレス", alt: ["マックアドレス", "macアドレス", "MAC アドレス"] },
+      { id: 15, category: "ネットワークの構成", q: "TCP/IPプロトコルを用いたネットワーク上で，コンピュータを識別するための番号（IPv4やIPv6，CIDRなどの表記方式がある）。", a: "IPアドレス", alt: ["ipアドレス", "IP アドレス"] },
+      { id: 16, category: "ネットワークの構成", q: "会社や家庭のLAN内部でコンピュータ機器を識別するために，ネットワークアドレス部とホストアドレス部で構成された番号。", a: "プライベートIPアドレス", alt: ["プライベートipアドレス", "プライベート IP アドレス"] },
+      { id: 17, category: "ネットワークの構成", q: "インターネットに接続されたコンピュータを識別するため，一意となるように割り当てられた番号。", a: "グローバルIPアドレス", alt: ["グローバルipアドレス", "グローバル IP アドレス"] },
       { id: 18, category: "ネットワークの構成", q: "IPアドレスから，特定のグループを示すネットワークアドレスを取り出すための値。", a: "サブネットマスク", alt: ["さぶねっとますく"] },
       { id: 19, category: "ネットワークの構成", q: "IPアドレスを構成する32ビットのビット列のうち，個々の組織が管理するネットワーク（サブネット）を識別するのに使われる部分。", a: "ネットワークアドレス", alt: ["ねっとわーくあどれす"] },
       { id: 20, category: "ネットワークの構成", q: "コンピュータネットワークに接続されているすべての機器にデータを送信する特別なアドレス。", a: "ブロードキャストアドレス", alt: ["ぶろーどきゃすとあどれす"] },
@@ -368,32 +363,12 @@
       { id: 24, category: "ネットワークの構成", q: "“非武装地帯”と呼ばれ，インターネットや内部ネットワークからも隔離された区域（セグメント）のこと。", a: "DMZ", alt: ["ディーエムゼット", "dmz"] },
       { id: 25, category: "ネットワークの構成", q: "インターネット上で使用するドメイン名とIPアドレスを互いに変換するためのしくみ。", a: "DNS", alt: ["ディーエヌエス", "dns"] },
       { id: 26, category: "ネットワークの構成", q: "インターネット上に構築される仮想的な専用回線。", a: "VPN", alt: ["ブイピーエヌ", "vpn"] },
-      { id: 27, category: "ネットワークの構成", q: "ネットワーク上でデータを送受信するときに，1秒間に転送できるデータのビット数。", a: "通信速度(bps)", alt: ["通信速度", "bps"] },
-      { id: 28, category: "ネットワークの構成", q: "データをインターネット上のサーバなどから送信・転送するときの所要時間。", a: "転送時間", alt: ["てんそうじかん"] },
-      { id: 29, category: "ネットワークの構成", q: "データ通信において，実質的にデータを送ることができる回線の割合。", a: "伝送効率", alt: ["でんそうこうりつ"] },
 
       // 2. 通信ネットワークに関する知識【ネットワークの活用】 (4問)
-      { id: 30, category: "ネットワークの活用", q: "クライアントサーバシステムで，クライアントには必要最小限の機能だけを持たせ，サーバでアプリケーションなどの管理を行うシステム構成で，情報漏えい対策としても注目されている。", a: "シンクライアント", alt: ["しんくらいあんと"] },
-      { id: 31, category: "ネットワークの活用", q: "Webサイトの訪問日時や回数などの情報を，利用者のコンピュータに保存するしくみ。", a: "Cookie", alt: ["クッキー", "cookie"] },
-      { id: 32, category: "ネットワークの活用", q: "各国の言葉や画像，動画など，形式の異なるさまざまなデータを電子メールで扱うための規格。", a: "MIME", alt: ["マイム", "mime"] },
-      { id: 33, category: "ネットワークの活用", q: "インターネットやイントラネットなどの情報通信ネットワークを使って，音声データを送受信する技術。", a: "VoIP", alt: ["ボイップ", "voip"] },
-
-      // 3. 情報モラルとセキュリティに関する知識【セキュリティ】 (15問)
-      { id: 34, category: "セキュリティ", q: "インターネットでデータを送受信する際に，第三者に内容が知られないようにデータを変換する場合，同一の鍵を用いて暗号化と復号を行う方法。", a: "共通鍵暗号方式", alt: ["きょうつうかぎあんごうほうしき"] },
-      { id: 35, category: "セキュリティ", q: "インターネットでデータを送受信する際に，第三者に内容が知られないようにデータを変換する場合，異なる鍵を用いて暗号化と復号を行う方法。", a: "公開鍵暗号方式", alt: ["こうかいかぎあんごうほうしき"] },
-      { id: 36, category: "セキュリティ", q: "公開鍵暗号方式を応用して，文書の作成者が本人であることと，その文書が改ざんされていないことを確認する技術。電子商取引でよく利用される。", a: "電子署名(デジタル署名)", alt: ["電子署名", "デジタル署名", "でんししょめい"] },
-      { id: 37, category: "セキュリティ", q: "電子商取引で利用される暗号化通信などで必要となる，デジタル証明書を発行する機関。", a: "認証局(CA)", alt: ["認証局", "CA", "ca"] },
-      { id: 38, category: "セキュリティ", q: "オンラインショッピングなど，インターネット上で個人情報などのデータを暗号化して，安全にやり取りするために広く普及している通信規約。ブラウザのURLを示す部分は「https://」で始まる。", a: "SSL(TLS)", alt: ["SSL", "TLS", "SSL/TLS", "ssl"] },
-      { id: 39, category: "セキュリティ", q: "HTTPに，SSLによるデータ暗号化機能を附加した通信規約。", a: "HTTPS", alt: ["https"] },
-      { id: 40, category: "セキュリティ", q: "コンピュータの運用状況やデータ通信の状況を記録したファイル。", a: "ログファイル", alt: ["ろぐふぁいる"] },
-      { id: 41, category: "セキュリティ", q: "OSやアプリケーションソフトなど，コンピュータシステムの動作状態を記録したもの。何らかのトラブルなどの情報も記録される。", a: "システムログ", alt: ["しすてむろぐ"] },
-      { id: 42, category: "セキュリティ", q: "Webサーバにアクセスした人物が，いつ，どのコンピュータからどのサイトを閲覧したのかなどの記録。", a: "アクセスログ", alt: ["あくせすろぐ"] },
-      { id: 43, category: "セキュリティ", q: "コンピュータシステムやネットワークの運用時に，セキュリティ上の問題として発生した事故や事例のこと。", a: "インシデント", alt: ["いんしでんと"] },
-      { id: 44, category: "セキュリティ", q: "リスクが発生する前に，そのリスクを組織的に管理し，リスクの発生による損失を回避，または不利益を最小限に抑えるためのプロセス。", a: "リスクマネジメント", alt: ["りすくまねじめんと"] },
-      { id: 45, category: "セキュリティ", q: "リスクマネジメントに対する一連の取組として，リスク特定，リスク分析，リスク評価，リスク対応を行う。", a: "リスクアセスメント", alt: ["りすくあせすめんと"] },
-      { id: 46, category: "セキュリティ", q: "SNSや掲示板などユーザが入力した内容を表示するWebページの脆弱性を利用した罠を仕掛け，偽サイトに誘導してさまざまな被害を引き起こす攻撃のこと。", a: "クロスサイトスクリプティング", alt: ["くろすさいとすくりぷてぃんぐ", "XSS"] },
-      { id: 47, category: "セキュリティ", q: "心理的な隙や行動のミスにつけ込むなど，情報通信技術を使用せず，情報資産を不正に収集する手口の総称。のぞき見やなりすましなどがある。", a: "ソーシャルエンジニアリング", alt: ["そーしゃるえんじにありんぐ"] },
-      { id: 48, category: "セキュリティ", q: "データベースと連携したWebアプリケーションの脆弱性を利用して不当なSQL文を実行させることにより，データベースの不正な閲覧や改ざんをする攻撃のこと。", a: "SQLインジェクション", alt: ["sqlいんじぇくしょん"] }
+      { id: 27, category: "ネットワークの活用", q: "クライアントサーバシステムで，クライアントには必要最小限の機能だけを持たせ，サーバでアプリケーションなどの管理を行うシステム構成で，情報漏えい対策としても注目されている。", a: "シンクライアント", alt: ["しんくらいあんと"] },
+      { id: 28, category: "ネットワークの活用", q: "Webサイトの訪問日時や回数などの情報を，利用者のコンピュータに保存するしくみ。", a: "Cookie", alt: ["クッキー", "cookie"] },
+      { id: 29, category: "ネットワークの活用", q: "各国の言葉や画像，動画など，形式の異なるさまざまなデータを電子メールで扱うための規格。", a: "MIME", alt: ["マイム", "mime"] },
+      { id: 30, category: "ネットワークの活用", q: "インターネットやイントラネットなどの情報通信ネットワークを使って，音声データを送受信する技術。", a: "VoIP", alt: ["ボイップ", "voip"] }
     ];
 
     // State
@@ -418,7 +393,7 @@
     let quizAnswered = false;
     let quizMistakes = [];
 
-    // Smooth Dropdown Menu Functions
+    // Dropdown Menu Control
     function toggleDropdown(event) {
       if (event) event.stopPropagation();
       const menu = document.getElementById('category-dropdown-menu');
@@ -441,7 +416,6 @@
       if (arrow) arrow.classList.remove('rotate-180');
     }
 
-    // Close dropdown on clicking outside
     document.addEventListener('click', function(e) {
       const container = document.getElementById('dropdown-container');
       if (container && !container.contains(e.target)) {
@@ -460,10 +434,8 @@
       selectedCategory = cat;
       closeDropdown();
 
-      // Update button label
       document.getElementById('selected-category-label').innerHTML = `<i class="fa-solid fa-layer-group text-yellow-300"></i> ${labelText}`;
 
-      // Update Option Styles inside Dropdown
       const options = document.querySelectorAll('.cat-option');
       options.forEach(opt => {
         if (opt.onclick.toString().includes(`'${cat}'`)) {
@@ -897,7 +869,7 @@
     });
 
     window.onload = function() {
-      selectCategory('ALL', '全単元 (48問)');
+      selectCategory('ALL', '全単元 (28問)');
       updateHeaderBadges();
     };
   </script>
